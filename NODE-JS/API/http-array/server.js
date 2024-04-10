@@ -21,9 +21,20 @@ const server = http.createServer((request, response)=>{
         response.setHeader('content-Type', 'application/json')
         response.end(JSON.stringify(users))
     
-    }if(true){//Buscar todos os usuário
-    }else if(true){//Buscar único usuários
-    }else if(true){//cadastrar um usuário
+    }else if(false){//Buscar único usuários
+    }else if(url === '/users' && method === "POST"){
+    //cadastrar um usuário
+        let body = ''
+        request.on('data', (chunk)=>{
+            body += chunk.toString() //'id:User, email:email'
+        })
+        request.on('end', ()=>{
+            const newuser = JSON.parse(body)
+            newuser.id = '1'
+            users.push(newuser)
+            response.writeHead(201, {'Content-Type': 'applications/json'})
+            responde.end(JSON.stringify(newuser))
+        })
     }else if(true){//Atualizar um usuário
     }else if(true){//Deletar um usuário
     }else{//Recurso não encontrado
