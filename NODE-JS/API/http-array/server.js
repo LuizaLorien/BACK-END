@@ -11,26 +11,25 @@
  * 
   */
 import http from 'node:http'
-server = request ('node:http')
-PORT = 3000
+
+const PORT = 3333
 const users = []
 const server = http.createServer((request, response)=>{
-    const{method, url} = request
-    console.log('Olá')
-    if(url === '/users' && method === " GET"){//buscar todos os usuários
-        response.setHeader('Content-Type', 'application/json')
-    }else if(true){//buscar um usuário
-    }else if(true){//cadastrar usuário
-    }else if(true){//atualizar usuário
-    }else if(true){//deletar usuário
-    }else{// reccurso nao encontrado
+    const {method, url} = request
 
+    if(url === '/users' && method === "GET"){//Buscar todos os usuários
+        response.setHeader('content-Type', 'application/json')
+        response.end(JSON.stringify(users))
+    
+    }if(true){//Buscar todos os usuário
+    }else if(true){//Buscar único usuários
+    }else if(true){//cadastrar um usuário
+    }else if(true){//Atualizar um usuário
+    }else if(true){//Deletar um usuário
+    }else{//Recurso não encontrado
     }
-    // response.writeHead(200, {'Content-Type' : 'test/plan'})
-    // response.end()
 })
 
-
-server.listen(PORT,()=>{
-    console.log(`servidor on PORT${PORT}`)
+server.listen(PORT, () => {
+    console.log(`Servidor on PORT: ${PORT}`)
 })
