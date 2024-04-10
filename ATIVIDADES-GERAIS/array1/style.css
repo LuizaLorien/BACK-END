@@ -1,0 +1,17 @@
+*{
+    box-sizing: border-box;
+    margin: auto;
+}
+header{
+    width: auto;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+}
+header h1{
+    align-items: center;
+}
+ul{
+    list-style: none;
+    display: flex;
+}
