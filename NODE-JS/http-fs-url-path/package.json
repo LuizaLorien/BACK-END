@@ -1,0 +1,22 @@
+{
+  "name": "http-fs-url-path",
+  "version": "1.0.0",
+  "description": "",
+  "main": "App.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon ./App.js",
+    "start": "node App.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "formidable": "^3.5.1",
+    "uuid": "^9.0.1"
+  }
+}
