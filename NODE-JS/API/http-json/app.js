@@ -9,9 +9,9 @@ const server = http.createServer((request, response) => {
     fs.readFile('funcionarios.json', 'utf8', (err, data) => {
         if (err) {
             response.write(500, { "Content-Type": "application.json" });
-            response.end(JSON.stringify({ jsonData }
-            ));
+            response.end(JSON.stringify ({ jsonData }));
         };
+
         let jsonData = [];
         try {
             jsonData = JSON.parse(data);
@@ -19,9 +19,11 @@ const server = http.createServer((request, response) => {
             console.error("erro ao ler o arquivo jsondata" + error);
 
         };
+
         if (method === "GET" && url === "/empregados") {
             response.writeHead(200, { "Content-Type": "application/json" });
             response.end(JSON.stringify(jsonData));
+            
         } else if (method === "GET" && url === "/empregados/count/") {
         } else if (method === "GET" && url.startsWith === "/empregados/porcargo/") {
             const cargo = url.split('/')[3]
@@ -59,13 +61,6 @@ const server = http.createServer((request, response) => {
                     }
                 )})
 
-
-
-
-
-
-
-                
         } else if (method === "PUT" && url.startsWith === "/empregados/") {
         } else if (method === "DELETE" && url.startsWith === "/empregados/") {
         } else { };
